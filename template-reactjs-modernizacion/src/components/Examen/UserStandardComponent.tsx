@@ -270,7 +270,7 @@ const UserStandardComponent: React.FC = () => {
                                     </strong>
                                     {task.assigned_users.length > 0 ? (
                                         <ul className='list-disc list-inside mt-2'>
-                                            {task.assigned_users.mapp(
+                                            {task.assigned_users.map(
                                                 (user: {
                                                     id: number
                                                     email: string

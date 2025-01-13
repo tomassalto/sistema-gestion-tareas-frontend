@@ -45,7 +45,7 @@ const Login = () => {
 
     return (
         <div className='container pt-5'>
-            <div className='offset-md-3 col-md-6 offset-sm-1 col-sm-10 bg-body rounded p-2 my-auto'>
+            <div className='flex flex-col offset-md-3 col-md-6 offset-sm-1 col-sm-10 bg-body rounded p-2 my-auto'>
                 <form onSubmit={handleSubmit(login)} className='p-4'>
                     <h3>Ingresar al sistema</h3>
                     <hr />
@@ -78,6 +78,15 @@ const Login = () => {
                         </button>
                     </div>
                 </form>
+                <p className='px-4'>Si aún no tiene cuenta:</p>
+                <a
+                    href='/apps/template/#/register'
+                    className='px-4 mb-4 w-full'
+                >
+                    <button className='p-2 bg-[#1134C9] text-white rounded-md w-full'>
+                        Registrarse
+                    </button>
+                </a>
             </div>
         </div>
     )
