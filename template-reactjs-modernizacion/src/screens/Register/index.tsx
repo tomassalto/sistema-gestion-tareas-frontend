@@ -71,82 +71,91 @@ const RegisterForm: React.FC = () => {
     }
 
     return (
-        <div className='flex justify-center py-[120px]'>
-            <form
-                onSubmit={handleSubmit}
-                className='flex flex-col bg-white gap-4 p-4 border justify-center border-gray-300 w-[50%] rounded-md'
-            >
-                <h2 className='text-[24px] font-bold'>Registrarse</h2>
-                <div className='flex flex-col'>
+        <div className='flex flex-col justify-center py-[120px] items-center'>
+            <div className='flex flex-col bg-white gap-4 p-4 border justify-center border-gray-300 w-[50%] rounded-md'>
+                <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+                    <h2 className='text-[24px] font-bold'>Registrarse</h2>
+                    <div className='flex flex-col'>
+                        <Input
+                            type='text'
+                            name='dni'
+                            label='DNI'
+                            placeholder='DNI'
+                            value={formData.dni}
+                            onChange={handleChange}
+                            className={{
+                                input: "p-2 border border-blue-600 rounded-md flex flex-col w-full",
+                            }}
+                            required
+                        />
+                    </div>
                     <Input
-                        type='text'
-                        name='dni'
-                        label='DNI'
-                        placeholder='DNI'
-                        value={formData.dni}
+                        type='email'
+                        name='email'
+                        label='Correo Electrónico'
+                        placeholder='Correo electrónico'
+                        value={formData.email}
                         onChange={handleChange}
                         className={{
-                            input: "p-2 border border-blue-600 rounded-md flex flex-col w-full",
+                            input: "p-2 border border-gray-400 rounded-md flex flex-col w-full",
                         }}
                         required
                     />
-                </div>
-                <Input
-                    type='email'
-                    name='email'
-                    label='Correo Electrónico'
-                    placeholder='Correo electrónico'
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={{
-                        input: "p-2 border border-gray-400 rounded-md flex flex-col w-full",
-                    }}
-                    required
-                />
-                <div className='flex flex-col'>
-                    <label htmlFor='rol'>Rol</label>
-                    <select
-                        name='rol'
-                        value={formData.rol}
+                    <div className='flex flex-col'>
+                        <label htmlFor='rol'>Rol</label>
+                        <select
+                            name='rol'
+                            value={formData.rol}
+                            onChange={handleChange}
+                            className='p-2 border border-gray-400 rounded-md w-full'
+                            required
+                        >
+                            <option value={1}>Usuario Estándar</option>
+                            <option value={0}>Usuario Administrador</option>
+                        </select>
+                    </div>
+                    <Input
+                        type='password'
+                        name='password'
+                        label='Contraseña'
+                        placeholder='Contraseña'
+                        value={formData.password}
                         onChange={handleChange}
-                        className='p-2 border border-gray-400 rounded-md w-full'
+                        className={{
+                            input: "p-2 border border-gray-400 rounded-md flex flex-col w-full",
+                        }}
                         required
+                    />
+                    <Input
+                        type='password'
+                        name='password_confirmation'
+                        label='Confirmar Contraseña'
+                        placeholder='Confirmar contraseña'
+                        value={formData.password_confirmation}
+                        onChange={handleChange}
+                        className={{
+                            input: "p-2 border border-gray-400 rounded-md flex flex-col w-full",
+                        }}
+                        required
+                    />
+                    <button
+                        type='submit'
+                        className='p-2 bg-blue-500 text-white rounded-md'
                     >
-                        <option value={1}>Usuario Estándar</option>
-                        <option value={0}>Usuario Administrador</option>
-                    </select>
+                        Registrarse
+                    </button>
+                </form>
+                <div>
+                    <p className=''>
+                        Si ya tiene cuenta y quiere ingresar al sistema:
+                    </p>
+                    <a href='/apps/template/#/login'>
+                        <button className='p-2 bg-blue-500 text-white rounded-md w-full'>
+                            Iniciar Sesión
+                        </button>
+                    </a>
                 </div>
-                <Input
-                    type='password'
-                    name='password'
-                    label='Contraseña'
-                    placeholder='Contraseña'
-                    value={formData.password}
-                    onChange={handleChange}
-                    className={{
-                        input: "p-2 border border-gray-400 rounded-md flex flex-col w-full",
-                    }}
-                    required
-                />
-                <Input
-                    type='password'
-                    name='password_confirmation'
-                    label='Confirmar Contraseña'
-                    placeholder='Confirmar contraseña'
-                    value={formData.password_confirmation}
-                    onChange={handleChange}
-                    className={{
-                        input: "p-2 border border-gray-400 rounded-md flex flex-col w-full",
-                    }}
-                    required
-                />
-                <button
-                    type='submit'
-                    className='p-2 bg-blue-500 text-white rounded-md'
-                >
-                    Registrarse
-                </button>
-            </form>
+            </div>
         </div>
     )
 }
