@@ -21,9 +21,9 @@ Antes de comenzar, asegúrate de tener instalado:
 2. Clona el repositorio backend (si aun no lo has hecho):
 
    ```bash
-   git clone https://github.com/tomassalto/sistema-gestion-tareas-backend.git
+   git clone https://github.com/tomassalto/gestion-tareas-backend.git
 
-   cd sistema-gestion-tareas-backend/gestion-tareas
+   cd gestion-tareas-backend/gestion-tareas
    ```
 
 3. Clona el repositorio frontend:
