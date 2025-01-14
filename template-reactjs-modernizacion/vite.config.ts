@@ -19,7 +19,8 @@ export default defineConfig(({ command, mode }) => {
             postcss: "./postcss.config.mjs",
         },
         server: {
-            open: dic[mode] + "/#/examen",
+            open: false,
+            host: "0.0.0.0", // Exponer en la red
         },
     }
 })
