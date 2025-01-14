@@ -10,7 +10,7 @@ Antes de comenzar, asegúrate de tener instalado:
 - [npm](https://www.npmjs.com/)
 - [Docker](https://docs.docker.com/desktop/setup/install/windows-install/)
 
-## Instalación
+## Instalación con XAMPP
 
 1. Crear una carpeta dentro de la carpeta "htdocs" del Xampp. Donde clonaremos el frontend y el backend. Dejo un ejemplo debajo:
 
