@@ -8,8 +8,9 @@ Antes de comenzar, asegúrate de tener instalado:
 
 - [Node.js](https://nodejs.org/) >= 16.0
 - [npm](https://www.npmjs.com/)
+- [Docker](https://docs.docker.com/desktop/setup/install/windows-install/)
 
-## Instalación
+## Instalación con XAMPP
 
 1. Crear una carpeta dentro de la carpeta "htdocs" del Xampp. Donde clonaremos el frontend y el backend. Dejo un ejemplo debajo:
 
@@ -20,9 +21,9 @@ Antes de comenzar, asegúrate de tener instalado:
 2. Clona el repositorio backend (si aun no lo has hecho):
 
    ```bash
-   git clone https://github.com/tomassalto/sistema-gestion-tareas-backend.git
+   git clone https://github.com/tomassalto/gestion-tareas-backend.git
 
-   cd sistema-gestion-tareas-backend/gestion-tareas
+   cd gestion-tareas-backend/gestion-tareas
    ```
 
 3. Clona el repositorio frontend:
@@ -47,39 +48,22 @@ Antes de comenzar, asegúrate de tener instalado:
 
    El frontend estará disponible en `http://localhost:5173/apps/template/#/examen`.
 
-## Paquetes Principales
+## Instalación con Docker
 
-- **React:** Librería para la construcción de interfaces.
-- **TypeScript:** Superconjunto de JavaScript con tipado estático.
-- **TailwindCSS:** Framework CSS para diseño rápido y eficiente.
+1. Iniciar el motor de Docker
 
-## Funcionalidades
+2. Clonar repositorio en una nueva carpeta (donde también debe estar el repositorio backend clonado) y cambiar a la rama "docker-container"
 
-Sistema de Login
+   ```bash
+   git clone https://github.com/tomassalto/sistema-gestion-tareas-frontend.git
 
-[![image.png](https://i.postimg.cc/vHqDv9cM/image.png)](https://postimg.cc/QH7X8FQn)
+   cd sistema-gestion-tareas-frontend
 
-Sistema de Registro
+   git switch docker-container
+   ```
 
-[![image.png](https://i.postimg.cc/g0RJdT4k/image.png)](https://postimg.cc/1gmPrMLL)
+3. Una vez hecho esto, y si en el repositorio backend ya realizaste los pasos de clonar el repositorio y cambiar a la rama `docker-container`. Regresar a la carpeta principal donde estan los dos repositorios clonados y ejecutar el comando (cuidado: el readme de backend tiene el mismo paso que este, NO realizar 2 veces):
 
-Vista de usuario administrador
-[![image.png](https://i.postimg.cc/nVTShw92/image.png)](https://postimg.cc/kD6vjscR)
-
-Crear tarea
-[![image.png](https://i.postimg.cc/cLtFTx9k/image.png)](https://postimg.cc/qN0cvTd2)
-
-Ver progreso de tarea
-
-[![image.png](https://i.postimg.cc/2SLjFKsF/image.png)](https://postimg.cc/VJ1czDLd)
-
-Editar tarea usuario administrador
-[![image.png](https://i.postimg.cc/8ChtQyVh/image.png)](https://postimg.cc/Nyj1RkFM)
-
-Vista de usuario estandard
-
-[![image.png](https://i.postimg.cc/ZRx5vv1G/image.png)](https://postimg.cc/Fd142zFp)
-
-Editar tarea usuario estandard
-
-[![image.png](https://i.postimg.cc/kMw5n8N8/image.png)](https://postimg.cc/t7ZbksMC)
+   ```bash
+    docker-compose up --build
+   ```
